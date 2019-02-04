@@ -23,12 +23,12 @@ public class StarsAndStripes
 
    public void printTwentyDashes()
    {
-	   out.println("--------------------);
+	   out.println("--------------------");
    }
 
    public void printTwoBlankLines()
    {
-	   out.println("/n/n")
+	   out.println("/n/n");
    }
    
    public void printASmallBox()

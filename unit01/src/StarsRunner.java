@@ -13,15 +13,14 @@ public class StarsRunner
    public static void main(String args[])
    {
       //instantiate a StarsAndStripes object
-	   StarsAndStripes test = new StarsAndStripes
-       test.printTwentyDashes();
-	   test.printTwentyStars();
-	   test.printTwentyDashes();
-	   test.printTwentyStars();
-	   test.printTwentyDashes();
-	   test.printTwentyStars();
+	   StarsAndStripes ref = new StarsAndStripes ();
+
 	   
       //call the methods needed to make the patterns on the word document
       
+			 ref.printTwentyStars();
+	   		 ref.printTwentyDashes();
+	   		 
+	   		 ref.printABigBox();
    }
 }
