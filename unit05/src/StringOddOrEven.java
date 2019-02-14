@@ -15,6 +15,7 @@ public class StringOddOrEven
 
 	public StringOddOrEven()
 	{
+		setString (" ");
 	}
 
 	public StringOddOrEven(String s)
@@ -27,9 +28,11 @@ public class StringOddOrEven
 
  	public boolean isEven()
  	{
+ 		if word%2==1 {
 		return false;
+ 		}
 	}
-
+  
  	public String toString()
  	{
  		String output="";
