@@ -18,6 +18,7 @@ public class WordsCompareRunner
 		WordsCompare dictionary = new WordsCompare();
 		
 		for(int i=1; i <=4; i++) {
+			out.println("please enter 2 words");
 			String wordOne = keyboard.nextLine();
 			String wordTwo = keyboard.nextLine();
 			
