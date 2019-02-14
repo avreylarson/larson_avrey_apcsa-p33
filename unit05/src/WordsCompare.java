@@ -15,19 +15,25 @@ public class WordsCompare
 
 	public WordsCompare()
 	{
+		setWords("","");
+		compare = 0;
 	}
 
 	public WordsCompare(String one, String two)
 	{
+		compare = 0; 
+		setWords(one,two);
 	}
 
 	public void setWords(String one, String two)
 	{
-
+		wordOne= one; 
+		wordTwo = two;
 	}
 
 	public void compare()
 	{
+		compare = wordOne.compareTo(wordTwo);
 	}
 
 	public String toString()
