@@ -31,14 +31,10 @@ public class Magpie4
 	public String getResponse(String statement)
 	{
 		String response = "";
-		if (statement.length() == 0)
+		statement.trim();
+		if (statement.length() <= 0)
 		{
 			response = "Say something, please.";
-		}
-
-		else if (findKeyword(statement, "no") >= 0)
-		{
-			response = "Why so negative?";
 		}
 		else if (findKeyword(statement, "mother") >= 0
 				|| findKeyword(statement, "father") >= 0
@@ -47,12 +43,53 @@ public class Magpie4
 		{
 			response = "Tell me more about your family.";
 		}
+		else if (findKeyword(statement, "dog")>= 0 || findKeyword(statement, "cat") >= 0)
+	    {
+	      response = "Tell me more about your pets.";
+	    }
+	    else if (findKeyword(statement, "Mauro") >= 0)
+	    {
+	      response = "Mr. Mauro might be the greatest teacher of all time.";
+	    }
+	    else if (findKeyword(statement, "hi") >= 0 || findKeyword(statement,"welcome") >= 0 || findKeyword(statement,"hello")>= 0)
+	    {
+	      response = "Hi person";
+	    }
+	    else if (findKeyword(statement,"fun") >= 0 || findKeyword(statement,"life")>= 0)
+	    {
+	      response = "That is just great";
+	    }
+	    else if (findKeyword(statement,"sports") >= 0 || findKeyword(statement,"basketball") >= 0 || findKeyword(statement,"soccer") >=0 || findKeyword(statement,"jordan") >= 0)
+	    {
+	      response = "What is your favorite sport?";
+	    }
+
+		else if (findKeyword(statement, "no") >= 0)
+		{
+			response = "Why so negative?";
+		}
+		
+		
+		
+		
+		
+		
+		//break
 
 		// Responses which require transformations
 		else if (findKeyword(statement, "I want to", 0) >= 0)
 		{
 			response = transformIWantToStatement(statement);
 		}
+		else if (findKeyword(statement, "I want", 0) >= 0)
+		    {
+		      response = transformIWantStatement(statement);
+		    }
+
+		else if (findKeyword(statement, "I", 0 ) >= 0 && findKeyword(statement, "you", 0 ) >= 1)
+		    {
+		      response = transformIYouStatement(statement);
+		    }
 
 		else
 		{
@@ -95,6 +132,21 @@ public class Magpie4
 		return "What would it mean to " + restOfStatement + "?";
 	}
 
+	private String transformIWantStatement (String statement)
+  {
+    statement = statement.trim();
+    String lastChar = statement.substring(statement
+				.length() - 1);
+		if (lastChar.equals("."))
+		{
+			statement = statement.substring(0, statement
+					.length() - 1);
+		}
+    int psnWantnow = findKeyword (statement, "I want", 0);
+    String restOfStatement = statement.substring(psnWantnow + 7).trim();
+    return "Would you really be happy if you had " + restOfStatement + "?";
+  }
+	
 	
 	
 	/**
@@ -122,6 +174,24 @@ public class Magpie4
 		return "What makes you think that I " + restOfStatement + " you?";
 	}
 	
+	private String transformIYouStatement(String statement)
+  {
+    statement = statement.trim();
+		String lastChar = statement.substring(statement
+				.length() - 1);
+		if (lastChar.equals("."))
+		{
+			statement = statement.substring(0, statement
+					.length() - 1);
+		}
+
+    int psnOfI = findKeyword (statement, "I", 0);
+    int psnOfIYou = findKeyword (statement, "you", psnOfI + 1);
+
+    String restOfStatement = statement.substring(psnOfI + 1, psnOfIYou).trim();
+    return "Why do you " + restOfStatement + " me?";
+  }
+
 	
 
 	
@@ -191,7 +261,7 @@ public class Magpie4
 	 */
 	private String getRandomResponse()
 	{
-		final int NUMBER_OF_RESPONSES = 4;
+		final int NUMBER_OF_RESPONSES = 6;
 		double r = Math.random();
 		int whichResponse = (int)(r * NUMBER_OF_RESPONSES);
 		String response = "";
@@ -212,6 +282,15 @@ public class Magpie4
 		{
 			response = "You don't say.";
 		}
+		else if (whichResponse == 4)
+		{
+		    response = "You cannot be serious.";
+		}
+		else if (whichResponse == 5)
+		{
+			response = "That is amazing.";
+		}
+
 
 		return response;
 	}
