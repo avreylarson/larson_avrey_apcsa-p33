@@ -18,7 +18,7 @@ public class Magpie2
 	 */
 	public String getGreeting()
 	{
-		return "Hello, let's talk.";
+		return "Hey, let's have a conversation!";
 	}
 	
 	/**
@@ -36,12 +36,12 @@ public class Magpie2
 		{
 			response = "Please say something.";
 		}
-		else if (statement.indexOf("mother") >= 0
-				|| statement.indexOf("father") >= 0
-				|| statement.indexOf("sister") >= 0
-				|| statement.indexOf("brother") >= 0)
+		else if (statement.indexOf("UCLA") >= 0
+				|| statement.indexOf("USC") >= 0
+				|| statement.indexOf("Harvard") >= 0
+				|| statement.indexOf("Princeton") >= 0)
 		{
-			response = "Tell me more about your family.";
+			response = "Tell me more about your top colleges.";
 		}
 		else if (statement.indexOf("no") >= 0)
 		{
@@ -52,9 +52,9 @@ public class Magpie2
 	    {
 	      response = "Tell me more about your pets.";
 	    }
-	    else if (statement.indexOf("Mauro") >= 0)
+	    else if (statement.indexOf("CompSci") >= 0)
 	    {
-	      response = "Mr. Mauro might be the greatest teacher of all time.";
+	      response = "CompSci might be the greatest subject of all time.";
 	    }
 	    else if (statement.indexOf("hi") >= 0 || statement.indexOf("welcome") >= 0 || statement.indexOf("hello") >= 0)
 	    {
@@ -64,9 +64,9 @@ public class Magpie2
 	    {
 	      response = "That is just great";
 	    }
-	    else if (statement.indexOf("sports") >= 0 || statement.indexOf("basketball") >= 0 || statement.indexOf("soccer") >=0 || statement.indexOf("jordan") >= 0)
+	    else if (statement.indexOf("fight on") >= 0 || statement.indexOf("go trojans") >= 0 || statement.indexOf("beat ND") >=0 || statement.indexOf("we run LA") >= 0)
 	    {
-	      response = "What is your favorite sport?";
+	      response = "fight on baby!!";
 	    }
 	    else
 		{
