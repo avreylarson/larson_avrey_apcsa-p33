@@ -1,7 +1,3 @@
-//(c) A+ Computer Science
-//www.apluscompsci.com
-//Name -
-
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -23,8 +19,8 @@ public class DoggiesRunner
 			String name  = keyboard.next();
 			pack.set(i, age, name);
 		}		
-		System.out.println("pack :: "+pack);
-		System.out.println("NAME OF OLDEST :: "+pack.getNameOfOldest());
-		System.out.println("NAME OF YOUNGEST :: "+pack.getNameOfYoungest());		
+		System.out.println("pack :: " + pack);
+		System.out.println("NAME OF OLDEST :: " + pack.getNameOfOldest());
+		System.out.println("NAME OF YOUNGEST :: " + pack.getNameOfYoungest());		
 	}		
 }
