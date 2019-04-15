@@ -8,24 +8,34 @@ public class NumberShifter
 {
 	public static int[] makeLucky7Array( int size)
 	{
-		int[] result = new int[size];
-		for (int i = 0; i <  size; i++) {
-			result[i] = (int) (Math.random() * 10 + 1);
+		int[] arr = new int[size];
+		for(int i = 0; i < size; i++) 
+		{
+			arr[i] = (int) (Math.random()*10);
 		}
-		return result;
+		return arr;
 	}
 	public static void shiftEm(int[] array)
 	{
-		int i = 1;
-		while (i < array.length) {
-			int j = i; 
-			while (j > 0 && array[j-1] != 7 && array[j] == 7) {
-				int temp = array[j-1];
-				array[j-1] = array[j];
-				array [j] = temp;
-				j--;
+		for (int i = 0; i < array.length; i++) 
+		{
+			int j = i;
+			while (j < array.length && array[j] != 7) j++;
+			if (j != i && j < array.length)
+			{
+				int t = array[j];
+				array[j] = array[i];
+				array[i] = t;
 			}
-			i++;
 		}
+	}
+	public String toString() 
+	{
+		int[] x = makeLucky7Array(10);
+		String output = Arrays.toString(x) + "\n";
+		shiftEm(x);
+		output += Arrays.toString(x) + "\n";
+		return output;
+		
 	}
 }

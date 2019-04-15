@@ -1,4 +1,3 @@
-
 import java.util.Arrays;
 import java.util.Scanner;
 import java.io.File;
@@ -9,9 +8,9 @@ public class NumberShifterRunner
 {
 	public static void main( String args[] ) throws IOException
 	{
-		int[] test = NumberShifter.makeLucky7Array(20);
-		NumberShifter.shiftEm(test);
-		System.out.println(Arrays.toString(test));
+		NumberShifter n = new NumberShifter();
+		n.makeLucky7Array(10);
+		System.out.print(n);
+		//add test cases
 	}
 }
-
