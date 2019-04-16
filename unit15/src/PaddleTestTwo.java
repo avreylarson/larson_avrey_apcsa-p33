@@ -1,7 +1,3 @@
-//(c) A+ Computer Science
-//www.apluscompsci.com
-//Name -
-
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -17,27 +13,20 @@ public class PaddleTestTwo extends Canvas implements KeyListener, Runnable
 {
 	private Ball ball;
 	private Paddle leftPaddle;
+	private Paddle rightPaddle;
 	private boolean[] keys;		//keeps track of what keys are pressed
 
 	public PaddleTestTwo()
 	{
 		//set up all game variables
-
-
 		//instantiate a Ball
-		
-		
+		ball = new Ball(10, 100, 10, 10, Color.blue, 2, 1);
 		
 		//instantiate a left Paddle
-		
-		
-		
+		leftPaddle = new Paddle(20, 200, 10, 40, Color.orange, 2);
 		
 		//instantiate a right Paddle
-		
-		
-		
-
+		rightPaddle = new Paddle(760, 200, 10, 40, Color.orange, 2);
 
 		keys = new boolean[5];
 
@@ -78,8 +67,7 @@ public class PaddleTestTwo extends Canvas implements KeyListener, Runnable
 		if(keys[1] == true)
 		{
 			//move left paddle down and draw it on the window
-
-
+			leftPaddle.moveDownAndDraw(window);
 		}
 		if(keys[2] == true)
 		{
