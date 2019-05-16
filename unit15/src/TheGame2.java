@@ -5,17 +5,17 @@
 import javax.swing.JFrame;
 import java.awt.Component;
 
-public class TheGame extends JFrame
+public class TheGame2 extends JFrame
 {
-	private static final int WIDTH = 800;
-	private static final int HEIGHT = 600;
+	private static final int WIDTH = 785;
+	private static final int HEIGHT = 810;
 
-	public TheGame()
+	public TheGame2()
 	{
-		super("PONG");
+		super("BREAKOUT");
 		setSize(WIDTH,HEIGHT);
 
-		Pong game = new Pong();
+		Pong2 game = new Pong2();
 
 		((Component)game).setFocusable(true);
 		getContentPane().add(game);
@@ -27,6 +27,6 @@ public class TheGame extends JFrame
 
 	public static void main( String args[] )
 	{
-		TheGame run = new TheGame();
+		TheGame2 run = new TheGame2();
 	}
 }

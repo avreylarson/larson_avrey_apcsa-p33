@@ -2,7 +2,7 @@
 //www.apluscompsci.com
 //Name -
 
-public interface Locatable
+public interface Moveable
 {
     public void setPos( int x, int y);
     public void setX( int x );
@@ -10,4 +10,12 @@ public interface Locatable
 
     public int getX();
     public int getY();
+
+	 public int getWidth();
+	 public int getHeight();
+	 public void setWidth( int w );
+	 public void setHeight( int h );
+
+    public void setSpeed( int s );
+	 public int getSpeed();
 }
